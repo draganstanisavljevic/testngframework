@@ -1,0 +1,21 @@
+<?xml version = "1.0"encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Cross Browser Smoke Suite">
+    <test name = "PetStore Smoke Chrome">
+        <parameter name="brows" value="firefox" />
+        <classes>
+            <class name = "seleniumTestNGDemo.RegisterUserTest"/>
+        </classes>
+    </test>
+    <test name = "PetStore Smoke Firefox">
+        <parameter name="brows" value="chrome" />
+        <classes>
+<!--            <class name = "seleniumTestNGDemo.RegisterUserTest"/>-->
+            <class name = "seleniumTestNGDemo.SearchForPetsTest">
+                <methods>
+                    <exclude name="excludedInXMLFile" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

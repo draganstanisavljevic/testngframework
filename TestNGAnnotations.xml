@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Before/After Annotations Suite">
+    <test name="Before/After Annotations Test">
+        <classes>
+            <class name="testNGTutorial.annotations_priority.BeforeAfterAnnotations" />
+            <class name="testNGTutorial.annotations_priority.Annotations2" />
+            <class name="testNGTutorial.annotations_priority.Annotations" />
+        </classes>
+    </test>
+    <test name="Second test">
+        <classes>
+            <class name="testNGTutorial.annotations_priority.BeforeAfterAnnotations" />
+            <class name="testNGTutorial.annotations_priority.Annotations" />
+        </classes>
+    </test>
+</suite>

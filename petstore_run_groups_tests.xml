@@ -1,0 +1,18 @@
+<?xml version = "1.0"encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Regression Suite">
+    <listeners>
+        <listener class-name="retrying.AnnotationTransformer"/>
+    </listeners>
+    <test name = "PetStore Functional Suite">
+        <groups>
+            <run>
+                <include name="userAdmin"/>
+            </run>
+        </groups>
+        <parameter name="brows" value="chrome" />
+        <classes>
+            <class name = "seleniumTestNGDemo.RegisterUserTest"/>
+        </classes>
+    </test>
+</suite>

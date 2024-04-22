@@ -1,0 +1,15 @@
+<?xml version = "1.0"encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Regression Suite"  parallel = "classes" thread-count="3" >
+    <listeners>
+        <listener class-name = "listeners.IReporterListener"></listener>
+    </listeners>
+    <test name = "PetStore Regression">
+        <classes>
+            <class name = "seleniumTestNGDemo.PetNavigationTest"/>
+            <class name = "seleniumTestNGDemo.SearchForPetsTest"/>
+            <class name = "seleniumTestNGDemo.RegisterUserTest"/>
+            <class name = "seleniumTestNGDemo.ShoppingFeatureTest"/>
+        </classes>
+    </test>
+</suite>
