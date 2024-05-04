@@ -26,7 +26,7 @@ pipeline {
     
     post {
         always {
-            echo "-----  END -------"
+            junit 'target/surefire-reports/*.xml'
         }
         failure {
             echo "-----  FAIL -------"
