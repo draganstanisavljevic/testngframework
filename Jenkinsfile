@@ -3,6 +3,7 @@ pipeline {
     agent { 
         docker {
             image 'maven:latest' 
+            args '-u root'
             // args '-v /root/.m2:/root/.m2' //here you can map local maven repo, this let you to reuse local artifacts
         }
     }
