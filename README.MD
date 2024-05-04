@@ -1,2 +1,1 @@
-mvn clean test -Dbrowser="chrome" -Denv="qa" -Dsurefire.suiteXmlFiles=TestNg_Smoke.xml
--Dresolution="middle"
+mvn clean test -Dbrowser="chrome" -Denv="qa" -Dsurefire.suiteXmlFiles=petstore_regression.xml -Dresolution="middle"
