@@ -18,7 +18,7 @@ pipeline {
                 //this is comment
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'mvn --version'
-                //sh 'mvn clean test'
+                sh 'mvn clean test'
             }
 
         }
