@@ -4,34 +4,23 @@ pipeline {
     agent { 
         docker {
             image 'maven:latest' 
+            args '-v /root/.m2:/root/.m2' //here you can map local maven repo, this let you to reuse local artifacts
         }
     }
     
-    
-    environment { 
-        BUILD_ID = 55
-    }
     parameters {
         string(name: 'Greeting', defaultValue: 'Zdravo', description: 'Linux')
     }
     
     stages {
         stage('build') {
-            environment { 
-                BUILD_ID = 446
-            }
             steps {
                 //this is comment
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                //sh 'mvn --version'
-                sh 'printenv'
+                sh 'mvn --version'
+                sh 'mvn clean test'
             }
 
-        }
-        stage('Example') {
-            steps {
-                echo "${params.Greeting} Maven!"
-            }
         }
     }
     
