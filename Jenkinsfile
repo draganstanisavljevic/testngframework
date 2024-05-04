@@ -36,9 +36,6 @@ pipeline {
     }
     
     post {
-        always {
-            //junit '**/target/surefire-reports/TEST-*.xml'
-        }
         failure {
             echo "-----  FAIL -------"
         }
