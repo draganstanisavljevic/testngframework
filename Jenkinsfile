@@ -22,11 +22,23 @@ pipeline {
             }
 
         }
+        stage('Publish Report') {
+      steps {
+        publishHTML([target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: true,
+          keepAll: true,
+          reportDir: 'target/surefire-reports/html/',
+          reportFiles: 'index.html',
+          reportName: "${reportName}"
+        ]])
+      }
+    }
     }
     
     post {
         always {
-            junit '**/target/surefire-reports/TEST-*.xml'
+            //junit '**/target/surefire-reports/TEST-*.xml'
         }
         failure {
             echo "-----  FAIL -------"
