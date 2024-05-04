@@ -1,4 +1,3 @@
-
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent { 
@@ -30,7 +29,7 @@ pipeline {
           keepAll: true,
           reportDir: 'target/surefire-reports/html/',
           reportFiles: 'index.html',
-          reportName: "${reportName}"
+          reportName: "report"
         ]])
       }
     }
