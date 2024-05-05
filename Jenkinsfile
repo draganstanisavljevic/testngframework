@@ -3,6 +3,7 @@ pipeline {
     agent { 
         docker {
             image 'maven:latest' 
+            //becuse of error 'could not create local repository' we need to run as root user:
             args '-u root'
             // args '-v /root/.m2:/root/.m2' //here you can map local maven repo, this let you to reuse local artifacts
         }
