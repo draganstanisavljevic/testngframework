@@ -37,7 +37,7 @@ public class BaseTest {
             System.setProperty("env", "qa");
         }
         if (System.getProperty("brows").equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chrome/chromedriver");
             ChromeOptions options=new ChromeOptions();
             options.addArguments(CalculateResolution.getResolution());
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
