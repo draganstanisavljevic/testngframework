@@ -3,7 +3,7 @@ pipeline {
     agent { 
         docker {
             //image 'maven:latest'
-            image 'maven-chrome:jdk-17'
+            image 'markhobson/maven-chrome:jdk-17'
             //becuse of error 'could not create local repository' we need to run as root user:
             args '-u root'
         }
