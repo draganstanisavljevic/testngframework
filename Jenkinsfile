@@ -4,9 +4,9 @@ pipeline {
         docker {
             image 'maven:latest' 
             //becuse of error 'could not create local repository' we need to run as root user:
-            //args '-u root'
+            args '-u root'
             //or
-            args '-v $HOME/.m2:/var/maven/.m2:z -e MAVEN_CONFIG=/var/maven/.m2 -e MAVEN_OPTS="-Duser.home=/var/maven"'
+            //args '-v $HOME/.m2:/var/maven/.m2:z -e MAVEN_CONFIG=/var/maven/.m2 -e MAVEN_OPTS="-Duser.home=/var/maven"'
         }
     }
     
