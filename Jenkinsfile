@@ -5,8 +5,6 @@ pipeline {
             image 'maven:latest' 
             //becuse of error 'could not create local repository' we need to run as root user:
             args '-u root'
-            //or
-            //args '-v $HOME/.m2:/var/maven/.m2:z -e MAVEN_CONFIG=/var/maven/.m2 -e MAVEN_OPTS="-Duser.home=/var/maven"'
         }
     }
     
@@ -25,20 +23,23 @@ pipeline {
 
         }
         stage('Publish Report') {
-      steps {
-        publishHTML([target: [
-          allowMissing: false,
-          alwaysLinkToLastBuild: true,
-          keepAll: true,
-          reportDir: 'target/surefire-reports/',
-          reportFiles: 'index.html',
-          reportName: "report"
-        ]])
-      }
-    }
-    }
+              steps {
+                publishHTML([target: [
+                  allowMissing: false,
+                  alwaysLinkToLastBuild: true,
+                  keepAll: true,
+                  reportDir: 'target/surefire-reports/',
+                  reportFiles: 'index.html',
+                  reportName: "report"
+                ]])
+              }
+            }
+        }
     
     post {
+        always{
+            junit 'target/surfire-reports/*.xml'
+        }
         failure {
             echo "-----  FAIL -------"
         }
