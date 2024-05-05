@@ -19,6 +19,7 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'mvn --version'
                 sh 'mvn clean test -Dbrowser="chrome" -e -X -Denv="qa" -Dsurefire.suiteXmlFiles=TestNGAnnotations.xml -Dresolution="middle"'
+                sh 'mvn clean test -Dbrowser="chrome" -Denv="qa" -Dsurefire.suiteXmlFiles=petstore_regression.xml -Dresolution="middle" '
             }
 
         }
