@@ -37,9 +37,6 @@ pipeline {
         }
     
     post {
-        always{
-            junit 'target/surfire-reports/*.xml'
-        }
         failure {
             echo "-----  FAIL -------"
         }
