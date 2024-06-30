@@ -75,7 +75,7 @@ public class RegisterUserTest extends BaseTest {
     }
 
     @Test(priority = 1, description = "This method is demo for exclude test in XML file")
-    public void ForFirefox(){
+    public void forFirefox(){
         System.out.println("The thread ID for ForFirefox is " + Thread.currentThread().getId());
         System.out.println("I should not be printed for firefox run");
     }

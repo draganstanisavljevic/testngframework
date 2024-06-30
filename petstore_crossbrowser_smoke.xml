@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name = "Cross Browser Smoke Suite">
     <test name = "PetStore Smoke Chrome">
-        <parameter name="brows" value="firefox" />
+        <parameter name="brows" value="chrome" />
         <classes>
             <class name = "seleniumTestNGDemo.RegisterUserTest"/>
         </classes>
