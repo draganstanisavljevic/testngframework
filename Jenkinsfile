@@ -40,7 +40,7 @@ pipeline {
     
     post {
         failure {
-            echo "-----  FAIL -------"
+            echo "-----  FAIL ------"
         }
     }
 }
