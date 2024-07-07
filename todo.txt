@@ -1,2 +1,0 @@
-#exceptions - or check on null wher you get property from file
-#gitlab pipeline
